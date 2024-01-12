@@ -12,14 +12,14 @@
 #    regexp: '^(\s*)default_ccache_name'
 #    line: '# \g<0>'  # Comment out the entire line
 
-- name: Comment out libdefaults in krb5.conf.d/kcm_default_ccache
-  ansible.builtin.replace:
-    dest: /etc/krb5.conf.d/kcm_default_ccache
-    regexp: '^\s*libdefaults'
-    replace: '# &'
+#- name: Comment out libdefaults in krb5.conf.d/kcm_default_ccache
+#  ansible.builtin.replace:
+#    dest: /etc/krb5.conf.d/kcm_default_ccache
+#    regexp: '^\s*libdefaults'
+#    replace: '# &'
 
 - name: Comment out ccache_name in krb5.conf.d/kcm_default_ccache
   ansible.builtin.replace:
     dest: /etc/krb5.conf.d/kcm_default_ccache
-    regexp: '^\s*default_ccache_name\s*=\s*KCM\s*$'
+    regexp: '^\s*default_ccache_name\s*=\s*KCM:'
     replace: '# &'
