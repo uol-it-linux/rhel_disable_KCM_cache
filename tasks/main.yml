@@ -15,11 +15,11 @@
 - name: Comment out libdefaults in krb5.conf.d/kcm_default_ccache
   ansible.builtin.replace:
     dest: /etc/krb5.conf.d/kcm_default_ccache
-    regexp: '^(\sn*)[libdefaults]'
-    replace: '#[libdefaults]'
+    regexp: '^\s*libdefaults'
+    replace: '# &'
 
 - name: Comment out ccache_name in krb5.conf.d/kcm_default_ccache
   ansible.builtin.replace:
     dest: /etc/krb5.conf.d/kcm_default_ccache
-    regexp: '^(\sn*)default_ccache_name = KCM:'
-    replace: '#default_ccache_name = KCM:'
+    regexp: '^\s*default_ccache_name\s*=\s*KCM\s*$'
+    replace: '# &'
