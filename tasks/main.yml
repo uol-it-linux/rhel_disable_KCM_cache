@@ -22,4 +22,4 @@
   ansible.builtin.replace:
     dest: /etc/krb5.conf.d/kcm_default_ccache
     regexp: '^\s*default_ccache_name\s*=\s*KCM:'
-    replace: '# &'
+    replace: '#  default_ccache_name = KCM:'
